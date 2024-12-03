@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import css from './Button.module.scss';
+import css from './ButtonUI.module.scss';
 
-const Button = ({ children, onClick, className, ...attrs }) => {
+const ButtonUI = ({ children, onClick, className, ...attrs }) => {
   return (
     <button
       className={`${css.button} ${className || ''}`}
@@ -15,10 +15,10 @@ const Button = ({ children, onClick, className, ...attrs }) => {
   );
 };
 
-Button.propTypes = {
+ButtonUI.propTypes = {
   children: PropTypes.node,
   onClick: PropTypes.func,
   className: PropTypes.string,
 };
 
-export default Button;
+export default ButtonUI;

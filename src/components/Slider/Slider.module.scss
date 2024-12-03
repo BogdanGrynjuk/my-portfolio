@@ -1,0 +1,27 @@
+@use 'scss/base/vars' as *;
+
+.header-container {
+  position: relative;
+  padding: calc($index * 0.5) 10px calc($index * 1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: calc($index * 1.85 + 5px);
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../../assets/images/icons/line.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 100;
+  }
+}
+
+.main-container {
+  width: 100%;
+  height: calc(100% - ($index * 3.3));
+}

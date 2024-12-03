@@ -4,7 +4,8 @@
 body {
   font-size: calc($index);
   font-family: shantell_sans-g, sans-serif;
-  background-color: $white-color;
+  background-color: $cappuccino-color;
+  background-image: url(../../assets/images/bg.jpg);
 }
 
 #root {

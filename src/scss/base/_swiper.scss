@@ -1,0 +1,64 @@
+@use 'scss/base/vars' as *;
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.swiper-slide {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-pagination {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: calc($index * 0.5);
+}
+
+.swiper-vertical > .swiper-pagination-bullets,
+.swiper-pagination-vertical.swiper-pagination-bullets {
+  top: 0;
+  left: 0;
+  margin: 0;
+  transform: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.swiper-vertical > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-vertical.swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  margin: 0;
+}
+.swiper-pagination-bullet {
+  width: auto;
+  height: auto;
+  opacity: 1;
+  background: transparent;
+  font-size: calc($index * 1.35);
+  font-weight: 600;
+  color: $light-gray-color;
+  cursor: pointer;
+  transition: color 0.5s $transition-timing-function;
+
+  &:hover {
+    color: $dark-gray-color;
+  }
+}
+
+.swiper-pagination-bullet-active {
+  color: $black-color;
+}
