@@ -1,0 +1,21 @@
+// colors
+$white-color: #e8e8e8;
+$black-color: #1a1a1b;
+$cappuccino-color: #f0e4dd;
+$light-gray-color: #aeb5a6;
+$dark-gray-color: #5b676d;
+
+// breakpoints
+$breakpoint-mobile: 320px;
+$breakpoint-tablet: 660px;
+$breakpoint-desktop: 1280px;
+
+// Dynamic index value based on viewport size (1vw + 1vh), used for responsive scaling.
+$index: calc(1vw + 1vh);
+
+//transition-timing-function
+$transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+// box shadows
+$box-shadow-small: calc($index * 0.3) calc($index * 0.3) 0px 0px $black-color;
+$box-shadow-none: 0px 0px 0px 0px $black-color;

@@ -1,1 +1,1 @@
-# my-portfolio
+# Portfolio by Bogdan Grynjuk

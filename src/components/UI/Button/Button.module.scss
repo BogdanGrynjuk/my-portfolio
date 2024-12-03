@@ -1,0 +1,18 @@
+@use 'scss/base/vars' as *;
+
+.button {
+  font-size: calc((1vw + 1vh) * 1.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: calc((1vw + 1vh) * 0.5);
+  text-wrap: nowrap;
+  border: 2px solid $black-color;
+  box-shadow: $box-shadow-small;
+
+  @media (hover: hover) {
+    &:hover {
+      box-shadow: $box-shadow-none;
+    }
+  }
+}

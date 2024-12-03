@@ -1,0 +1,43 @@
+@use 'scss/base/fonts' as *;
+@use 'scss/base/vars' as *;
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+button {
+  background-color: transparent;
+  font-family: inherit;
+  border: none;
+  outline: none;
+  display: block;
+  cursor: pointer;
+}
