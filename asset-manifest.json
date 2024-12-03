@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/my-portfolio/static/css/main.079c4335.css",
+    "main.js": "/my-portfolio/static/js/main.6b1a5f23.js",
+    "static/media/ShantellSans-SemiBold.ttf": "/my-portfolio/static/media/ShantellSans-SemiBold.8c615d622d17a4424839.ttf",
+    "static/media/ShantellSans-Medium.ttf": "/my-portfolio/static/media/ShantellSans-Medium.3e0d0e058f4074e46ea8.ttf",
+    "static/media/ShantellSans-Bold.ttf": "/my-portfolio/static/media/ShantellSans-Bold.62a75f1e4698f8713563.ttf",
+    "static/media/ShantellSans-Regular.ttf": "/my-portfolio/static/media/ShantellSans-Regular.7f232b3bb6c7384ae30a.ttf",
+    "index.html": "/my-portfolio/index.html",
+    "main.079c4335.css.map": "/my-portfolio/static/css/main.079c4335.css.map",
+    "main.6b1a5f23.js.map": "/my-portfolio/static/js/main.6b1a5f23.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.079c4335.css",
+    "static/js/main.6b1a5f23.js"
+  ]
+}
