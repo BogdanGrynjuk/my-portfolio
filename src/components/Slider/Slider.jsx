@@ -6,6 +6,8 @@ import 'swiper/css';
 import 'swiper/css/mousewheel';
 import css from './Slider.module.scss';
 
+import IntroSection from 'components/IntroSection';
+
 const Slider = () => {
   const swiperRef = useRef(null);
 
@@ -42,7 +44,7 @@ const Slider = () => {
           modules={[Pagination, Mousewheel]}
         >
           <SwiperSlide>
-            <h2>Intro Section</h2>
+            <IntroSection />
           </SwiperSlide>
           <SwiperSlide>
             <h2>Projects Section</h2>

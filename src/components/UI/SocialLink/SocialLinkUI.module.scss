@@ -1,0 +1,18 @@
+@use 'scss/base/vars' as *;
+
+.link {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc($index * 2.5);
+  height: calc($index * 2.5);
+  transform: scale(1);
+  transition: all 0.5s $transition-timing-function;
+
+  @media (hover: hover) {
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}

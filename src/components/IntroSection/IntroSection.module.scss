@@ -1,0 +1,12 @@
+@use 'scss/base/vars' as *;
+@use 'scss/base/mixins' as *;
+
+.section {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    font-size: calc($index * 2);
+    text-align: center;
+  }
+}
