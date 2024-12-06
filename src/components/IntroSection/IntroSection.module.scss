@@ -11,7 +11,7 @@
   }
 
   &__text {
-    font-size: calc($index * 1.1);
+    font-size: calc($index * 1.2);
     text-align: left;
   }
 
@@ -21,25 +21,54 @@
     gap: calc($index);
     width: 60%;
 
-    @include tablet-and-desktop {
-      flex-direction: row;
-      width: 90%;
-    }
-
     @include desktop-only {
-      width: 60%;
+      flex-direction: row;
     }
   }
 
-  @include tablet-and-desktop {
-    grid-template-columns: 1fr 45%;
+  @include tablet-only {
+    grid-template-columns: 1fr 40%;
+    grid-template-rows: auto auto auto;
+    column-gap: calc($index * 2.5);
+
+    & > &__title,
+    & > &__text {
+      grid-column: 1;
+    }
+
+    & > &__controls {
+      grid-column: 2;
+      grid-row: 3;
+      justify-content: center;
+    }
+
+    & > &__title {
+      grid-row: 1;
+    }
+
+    & > &__text:nth-of-type(1) {
+      grid-row: 2;
+    }
+
+    & > &__text:nth-of-type(2) {
+      grid-row: 3;
+    }
+
+    & > :nth-child(3) {
+      grid-column: 2;
+      grid-row: 1 / span 2;
+    }
+  }
+
+  @include desktop-only {
+    grid-template-columns: 40% 1fr;
     grid-template-rows: auto auto auto auto;
     column-gap: calc($index * 2.5);
 
     & > &__title,
     & > &__text,
     & > &__controls {
-      grid-column: 1;
+      grid-column: 2;
     }
 
     & > &__title {
@@ -59,23 +88,9 @@
     }
 
     & > :nth-child(3) {
-      grid-column: 2;
+      grid-column: 1;
       grid-row: 1 / span 4;
       align-self: center;
-    }
-  }
-
-  @include desktop-only {
-    column-gap: calc($index * 1);
-    grid-template-columns: 45% 1fr;
-    & > &__title,
-    & > &__text,
-    & > &__controls {
-      grid-column: 2;
-    }
-
-    & > :nth-child(3) {
-      grid-column: 1;
     }
   }
 }

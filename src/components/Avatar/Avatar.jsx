@@ -1,15 +1,17 @@
-import React, { useEffect, useRef } from 'react';
-
+import React, { useEffect, useRef, useState } from 'react';
 import SocialLinkUI from 'components/UI/SocialLink';
-
 import css from './Avatar.module.scss';
-
 import { SOCIAL_NETWORKS } from 'constants/socialNetworks';
 import { useTranslation } from 'react-i18next';
 
 const Avatar = () => {
+  const [isVisibleContent, setIsVisibleContent] = useState(false);
   const avatarRef = useRef();
   const { t } = useTranslation();
+
+  const toggleVisibleContent = () => {
+    setIsVisibleContent(!isVisibleContent);
+  };
 
   useEffect(() => {
     const element = avatarRef.current;
@@ -17,9 +19,9 @@ const Avatar = () => {
     const observerCallback = entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          element.classList.add(css.animated);
+          element.classList.add(css['container--animated']);
         } else {
-          element.classList.remove(css.animated);
+          element.classList.remove(css['container--animated']);
         }
       });
     };
@@ -37,14 +39,22 @@ const Avatar = () => {
 
   return (
     <div ref={avatarRef} className={css.container}>
-      <div className={css.container__content}>
-        <div className={css['container__content--top']}>
+      <div className={css['container__content']} onClick={toggleVisibleContent}>
+        <div
+          className={`${css['container__content-top']} ${
+            isVisibleContent ? css['container__content-top--visible'] : ''
+          }`}
+        >
           <h2>{t('my_name')}</h2>
           <p>{t('front-end_developer')}</p>
         </div>
-        <div className={css['container__content--bottom']}>
+        <div
+          className={`${css['container__content-bottom']} ${
+            isVisibleContent ? css['container__content-bottom--visible'] : ''
+          }`}
+        >
           <p>{t('online_profiles')}</p>
-          <ul className={css['social-list']}>
+          <ul className={css['container__social-list']}>
             {SOCIAL_NETWORKS.map(({ id, name, url, icon }) => (
               <li key={id}>
                 <SocialLinkUI name={name} url={url} icon={icon} />
