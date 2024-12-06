@@ -1,12 +1,15 @@
 import React, { useEffect, useRef } from 'react';
 
 import SocialLinkUI from 'components/UI/SocialLink';
+
 import css from './Avatar.module.scss';
 
 import { SOCIAL_NETWORKS } from 'constants/socialNetworks';
+import { useTranslation } from 'react-i18next';
 
 const Avatar = () => {
   const avatarRef = useRef();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const element = avatarRef.current;
@@ -36,11 +39,11 @@ const Avatar = () => {
     <div ref={avatarRef} className={css.container}>
       <div className={css.container__content}>
         <div className={css['container__content--top']}>
-          <h2>Bogdan Grynjuk</h2>
-          <p>Front-end Developer</p>
+          <h2>{t('my_name')}</h2>
+          <p>{t('front-end_developer')}</p>
         </div>
         <div className={css['container__content--bottom']}>
-          <p>Online Profiles:</p>
+          <p>{t('online_profiles')}</p>
           <ul className={css['social-list']}>
             {SOCIAL_NETWORKS.map(({ id, name, url, icon }) => (
               <li key={id}>

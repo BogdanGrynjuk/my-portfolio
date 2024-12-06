@@ -6,7 +6,7 @@ import css from './ButtonUI.module.scss';
 const ButtonUI = ({ children, onClick, className, ...attrs }) => {
   return (
     <button
-      className={`${css.button} ${className || ''}`}
+      className={`${className || ''} ${css.button}`}
       onClick={onClick}
       {...attrs}
     >

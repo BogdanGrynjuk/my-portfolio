@@ -54,8 +54,10 @@
   cursor: pointer;
   transition: color 0.5s $transition-timing-function;
 
-  &:hover {
-    color: $dark-gray-color;
+  @media (hover: hover) {
+    &:hover {
+      color: $dark-gray-color;
+    }
   }
 }
 
