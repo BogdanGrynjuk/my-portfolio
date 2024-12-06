@@ -4,5 +4,10 @@
   "who_am_I": "Who Am I?",
   "my_name": "Bogdan Grynjuk",
   "front-end_developer": "Front-end developer",
-  "online_profiles": "Online profiles:"
+  "online_profiles": "Online profiles:",
+  "about_me": "Hello! I'm a passionate web developer dedicated to crafting modern and user-friendly interfaces. My inspiration comes from solving complex problems and transforming ideas into beautiful, functional web applications. I am constantly honing my skills and love exploring new technologies, as I believe that growth has no limits. ",
+  "my_goal": "My goal is to create products that not only work seamlessly but also captivate users. If you're looking for someone to bring your ideas to life or support your project, let's collaborate!",
+  "see_my_skills": "See My Skills",
+  "see_my_cv": "See My CV",
+  "back": "Go Back"
 }

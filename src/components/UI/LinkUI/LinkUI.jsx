@@ -1,33 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import css from './ButtonUI.module.scss';
+import css from './LinkUI.module.scss';
 
-const ButtonUI = ({ children, onClick, className, type, ...attrs }) => {
+const LinkUI = ({ children, onClick, className, href, ...attrs }) => {
   return (
-    <button
-      type={type}
+    <a
       className={`${className || ''} ${css.container}`}
+      href={href}
       onClick={onClick}
       {...attrs}
     >
       {children}
-    </button>
+    </a>
   );
 };
 
-ButtonUI.propTypes = {
-  type: PropTypes.string,
+LinkUI.propTypes = {
+  href: PropTypes.string.isRequired,
   children: PropTypes.node,
   onClick: PropTypes.func,
   className: PropTypes.string,
 };
 
-ButtonUI.defaultProps = {
-  children: 'Default button',
+LinkUI.defaultProps = {
+  children: 'Default link',
   onClick: () => {},
   className: '',
-  type: 'button',
 };
 
-export default ButtonUI;
+export default LinkUI;

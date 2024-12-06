@@ -1,0 +1,34 @@
+@use 'scss/base/mixins' as *;
+@use 'scss/base/vars' as *;
+
+.container {
+  position: fixed;
+  inset: 0;
+  padding: calc($index * 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../../../assets/images/bg.jpg);
+  z-index: 1000;
+
+  &__btn-close {
+    position: absolute;
+    top: calc($index * 1);
+    left: calc($index * 1);
+    column-gap: calc($index * 0.5);
+    text-wrap: nowrap;
+
+    & img {
+      transform: scale(-1);
+      height: calc($index * 1.3);
+      width: calc($index * 1.6);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        box-shadow: $box-shadow-none;
+      }
+    }
+  }
+}

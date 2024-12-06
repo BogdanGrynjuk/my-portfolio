@@ -2,11 +2,80 @@
 @use 'scss/base/mixins' as *;
 
 .section {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  gap: calc($index);
+  place-items: center;
 
   &__title {
-    font-size: calc($index * 2);
     text-align: center;
+  }
+
+  &__text {
+    font-size: calc($index * 1.1);
+    text-align: left;
+  }
+
+  &__controls {
+    display: flex;
+    flex-direction: column;
+    gap: calc($index);
+    width: 60%;
+
+    @include tablet-and-desktop {
+      flex-direction: row;
+      width: 90%;
+    }
+
+    @include desktop-only {
+      width: 60%;
+    }
+  }
+
+  @include tablet-and-desktop {
+    grid-template-columns: 1fr 45%;
+    grid-template-rows: auto auto auto auto;
+    column-gap: calc($index * 2.5);
+
+    & > &__title,
+    & > &__text,
+    & > &__controls {
+      grid-column: 1;
+    }
+
+    & > &__title {
+      grid-row: 1;
+    }
+
+    & > &__text:nth-of-type(1) {
+      grid-row: 2;
+    }
+
+    & > &__text:nth-of-type(2) {
+      grid-row: 3;
+    }
+
+    & > &__controls {
+      grid-row: 4;
+    }
+
+    & > :nth-child(3) {
+      grid-column: 2;
+      grid-row: 1 / span 4;
+      align-self: center;
+    }
+  }
+
+  @include desktop-only {
+    column-gap: calc($index * 1);
+    grid-template-columns: 45% 1fr;
+    & > &__title,
+    & > &__text,
+    & > &__controls {
+      grid-column: 2;
+    }
+
+    & > :nth-child(3) {
+      grid-column: 1;
+    }
   }
 }
