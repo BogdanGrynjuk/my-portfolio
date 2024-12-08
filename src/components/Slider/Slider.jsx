@@ -10,6 +10,7 @@ import css from './Slider.module.scss';
 import IntroSection from 'components/IntroSection';
 import LanguageSwitcher from 'components/LanguageSwitcher';
 import ProjectsSection from 'components/ProjectsSection';
+import MusicToggleButton from 'components/MusicToggleButton';
 
 const Slider = () => {
   const swiperRef = useRef(null);
@@ -47,6 +48,7 @@ const Slider = () => {
           {t('portfolio_by_Bogdan_Grynjuk')}
         </h1>
         <LanguageSwitcher />
+        <MusicToggleButton />
       </header>
 
       <main className={css['main-container']}>

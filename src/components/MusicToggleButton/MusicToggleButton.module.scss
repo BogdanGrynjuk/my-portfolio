@@ -1,0 +1,28 @@
+@use 'scss/base/vars' as *;
+
+.button {
+  border: 1px solid $black-color;
+  box-shadow: $box-shadow-small;
+  transition: box-shadow 0.5s $transition-timing-function;
+  width: calc($index * 1.35 * 1.33);
+  height: calc($index * 1.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (hover: hover) {
+    &:hover {
+      box-shadow: $box-shadow-none;
+    }
+  }
+
+  &--active {
+    box-shadow: $box-shadow-none;
+  }
+
+  & img {
+    height: 90%;
+
+    object-fit: contain;
+  }
+}

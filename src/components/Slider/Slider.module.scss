@@ -6,6 +6,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  column-gap: calc($index * 0.5);
 
   &::before {
     content: '';
