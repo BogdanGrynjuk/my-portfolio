@@ -9,6 +9,7 @@ import css from './Slider.module.scss';
 
 import IntroSection from 'components/IntroSection';
 import LanguageSwitcher from 'components/LanguageSwitcher';
+import ProjectsSection from 'components/ProjectsSection';
 
 const Slider = () => {
   const swiperRef = useRef(null);
@@ -68,7 +69,7 @@ const Slider = () => {
             <IntroSection />
           </SwiperSlide>
           <SwiperSlide>
-            <h2>Projects Section</h2>
+            <ProjectsSection />
           </SwiperSlide>
           <SwiperSlide>
             <h2>Contacts Section</h2>

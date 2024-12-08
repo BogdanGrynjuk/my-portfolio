@@ -21,8 +21,14 @@ const IntroSection = () => {
       <Avatar />
       <p className={css['section__text']}>{t('my_goal')}</p>
       <div className={css['section__controls']}>
-        <ButtonUI onClick={toggleModal}>{t('see_my_skills')}</ButtonUI>
+        <ButtonUI
+          className={css['section__controls-item']}
+          onClick={toggleModal}
+        >
+          {t('see_my_skills')}
+        </ButtonUI>
         <LinkUI
+          className={css['section__controls-item']}
           href="/my-portfolio/cv.pdf"
           target="_blank"
           rel="noopener noreferrer"

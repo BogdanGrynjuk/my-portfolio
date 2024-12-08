@@ -8,8 +8,8 @@
   border-radius: 100%;
 
   @include tablet-only {
-    width: calc($index * 17);
-    height: calc($index * 17);
+    width: calc($index * 16);
+    height: calc($index * 16);
   }
 
   &::before {
@@ -37,7 +37,7 @@
     opacity: 0;
 
     @include tablet-only {
-      left: calc(-1 * $index * 2.5);
+      left: calc(-1 * $index * 3);
     }
   }
 
