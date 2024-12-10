@@ -1,8 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
-import SocialLinkUI from 'components/UI/SocialLink';
-import css from './Avatar.module.scss';
-import { SOCIAL_NETWORKS } from 'constants/socialNetworks';
 import { useTranslation } from 'react-i18next';
+
+import css from './Avatar.module.scss';
+
+import { SOCIAL_NETWORKS } from 'constants/socialNetworks';
+
+import SocialLinkUI from 'components/UI/SocialLink';
 
 const Avatar = () => {
   const [isVisibleContent, setIsVisibleContent] = useState(false);

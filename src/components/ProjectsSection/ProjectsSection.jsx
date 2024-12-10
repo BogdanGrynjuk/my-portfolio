@@ -1,13 +1,17 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { useTranslation } from 'react-i18next';
+
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { useTranslation } from 'react-i18next';
 
 import { Keyboard, Navigation, Autoplay } from 'swiper/modules';
 
 import css from './ProjectsSection.module.scss';
+
+import { PROJECTS } from 'constants/projects';
+import ProjectItem from 'components/ProjectItem';
 
 function ProjectsSection() {
   const { t } = useTranslation();
@@ -23,24 +27,18 @@ function ProjectsSection() {
         keyboard={{
           enabled: true,
         }}
-        // autoplay={{
-        //   delay: 5000,
-        //   disableOnInteraction: false,
-        // }}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
         modules={[Keyboard, Navigation, Autoplay]}
         className={css.slider}
       >
-        <SwiperSlide>
-          <div>Slide 1</div>
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <div>Slide 2</div>
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <div>Slide 3</div>
-        </SwiperSlide>
+        {PROJECTS.map(project => (
+          <SwiperSlide key={project.id}>
+            <ProjectItem project={project} />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </section>
   );

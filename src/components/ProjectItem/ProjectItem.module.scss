@@ -1,0 +1,86 @@
+@use 'scss/base/vars' as *;
+@use 'scss/base/mixins' as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 calc($index * 3.3);
+  width: 100%;
+
+  &__title {
+    font-size: calc($index * 2.3);
+  }
+
+  &__banner {
+    margin: calc($index * 2.5) 0;
+    position: relative;
+    width: calc($index * 16);
+    height: calc($index * 9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: calc(-1 * $index * 2.6);
+      left: calc(-1 * $index * 2.3);
+      background-image: url(../../assets/images/icons/square.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      z-index: -1;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      top: calc($index * 3);
+      left: calc(-1 * $index * 5.7);
+      width: calc($index * 5);
+      height: calc($index * 2.5);
+      transform: rotate(-50deg) scale(0.7);
+      background-image: url(../../assets/images/icons/clickToOpen.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      z-index: 1;
+      opacity: 0;
+    }
+
+    &.animated::after {
+      @include rotateFadeIn(-50deg);
+      animation: rotateFadeIn 0.5s $transition-timing-function 1s forwards;
+    }
+  }
+
+  &__img {
+    border: 2px solid $black-color;
+    border-radius: calc($index * 0.5);
+    cursor: pointer;
+  }
+
+  &__description {
+    font-size: calc($index * 1.1);
+    margin-bottom: calc($index);
+  }
+
+  &__resources {
+    display: flex;
+    flex-direction: column;
+    gap: calc($index);
+    width: calc((100% + (($index * 3.3) * 2)) * 0.6);
+
+    @include tablet-and-desktop {
+      flex-direction: row;
+      width: 50%;
+    }
+
+    @include desktop-only {
+      width: 40%;
+    }
+  }
+
+  &__link {
+    flex: 1;
+  }
+}
