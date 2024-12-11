@@ -6,6 +6,7 @@ import css from './ProjectItem.module.scss';
 
 import LinkUI from 'components/UI/LinkUI';
 import Modal from 'components/UI/ModalUI';
+import ProjectDetails from 'components/ProjectDetails';
 
 const ProjectItem = ({ project }) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -76,7 +77,7 @@ const ProjectItem = ({ project }) => {
       </div>
       {isOpenModal && (
         <Modal closeModal={toggleModal}>
-          <h2>Project Details</h2>
+          <ProjectDetails project={project} />
         </Modal>
       )}
     </>

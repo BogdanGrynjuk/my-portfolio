@@ -47,3 +47,24 @@
     }
   }
 }
+
+@mixin fadeInWithTranslate($direction: 'down', $distance: 100%) {
+  @keyframes fadeInWithTranslate-#{$direction} {
+    0% {
+      opacity: 0;
+      @if $direction == 'down' {
+        transform: translateY($distance);
+      } @else if $direction == 'up' {
+        transform: translateY(-$distance);
+      } @else if $direction == 'left' {
+        transform: translateX(-$distance);
+      } @else if $direction == 'right' {
+        transform: translateX($distance);
+      }
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+  }
+}
