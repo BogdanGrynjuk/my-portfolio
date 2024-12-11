@@ -9,8 +9,8 @@ export const PROJECTS = [
     id: 1,
     title: 'Donut',
     description: {
-      en: 'The landing page is dedicated to a donut-making masterclass led by the renowned chef Eva Green, also known as the Donut Queen. The page provides details about the masterclass, exciting offers, and the delightful atmosphere created by the team at "Oh My Donut"',
-      ua: 'Лендінг пейдж присвячений майстер-класу з приготування пончиків, який проводить відома шеф-кухарка Єва Грін, також відома як Донат Королева. На сторінці представлено деталі про майстер-клас, захоплюючі пропозиції і атмосферу, яку створює команда магазину "Oh My Donut"',
+      en: 'The landing page is dedicated to a donut-making masterclass led by the renowned chef Eva Green, also known as the Donut Queen. The page provides details about the masterclass, exciting offers, and the delightful atmosphere created by the team at "Oh My Donut".',
+      ua: 'Лендінг пейдж присвячений майстер-класу з приготування пончиків, який проводить відома шеф-кухарка Єва Грін, також відома як Донат Королева. На сторінці представлено деталі про майстер-клас, захоплюючі пропозиції і атмосферу, яку створює команда магазину "Oh My Donut".',
     },
     technologies: 'HTML, Sass, Vanilla JavaScript',
     url: 'https://groot921.github.io/goit-project-donut/',

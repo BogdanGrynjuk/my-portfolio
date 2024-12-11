@@ -47,13 +47,9 @@ const ProjectItem = ({ project }) => {
       <div className={css.container}>
         <h3 className={css.container__title}>{project.title}</h3>
 
-        <div
-          className={css.container__banner}
-          ref={bannerRef}
-          onClick={toggleModal}
-        >
+        <div className={css.banner} ref={bannerRef} onClick={toggleModal}>
           <img
-            className={css.container__img}
+            className={css.banner__img}
             src={project.img}
             alt={`application ${project.title}`}
           />
