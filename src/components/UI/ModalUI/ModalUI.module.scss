@@ -12,10 +12,19 @@
   background-image: url(../../../assets/images/bg.jpg);
   z-index: 1000;
 
-  &__btn-close {
+  &__header {
     position: absolute;
     top: calc($index * 1);
     left: calc($index * 1);
+    right: calc($index * 1);
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: calc($index * 0.5);
+    align-items: center;
+  }
+
+  &__btn-close {
+    justify-self: start;
     column-gap: calc($index * 0.5);
     text-wrap: nowrap;
 

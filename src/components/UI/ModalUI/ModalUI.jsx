@@ -8,6 +8,8 @@ import ButtonUI from '../Button/ButtonUI';
 import css from './ModalUI.module.scss';
 
 import arrow from 'assets/images/icons/arrow-right.svg';
+import LanguageSwitcher from 'components/LanguageSwitcher';
+import MusicToggleButton from 'components/MusicToggleButton';
 
 const modalRoot = document.querySelector('#modal-root');
 const ModalUI = ({ closeModal, children }) => {
@@ -29,10 +31,15 @@ const ModalUI = ({ closeModal, children }) => {
 
   return createPortal(
     <div className={css.container}>
-      <ButtonUI className={css['container__btn-close']} onClick={closeModal}>
-        <img src={arrow} alt="arrow-left" />
-        <span>{t('back')}</span>
-      </ButtonUI>
+      <header className={css['container__header']}>
+        <ButtonUI className={css['container__btn-close']} onClick={closeModal}>
+          <img src={arrow} alt="arrow-left" />
+          <span>{t('back')}</span>
+        </ButtonUI>
+        <LanguageSwitcher />
+        <MusicToggleButton />
+      </header>
+
       {children}
     </div>,
     modalRoot

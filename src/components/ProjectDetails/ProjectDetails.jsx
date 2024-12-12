@@ -6,8 +6,7 @@ import { useTranslation } from 'react-i18next';
 
 import mask from 'assets/images/masks/dynamic-mask.gif';
 
-const ProjectDetails = ({ project }) => {
-  const { title, img, technologies } = project;
+const ProjectDetails = ({ title, img, technologies }) => {
   const { t } = useTranslation();
   return (
     <div className={css.project}>
@@ -35,5 +34,7 @@ const ProjectDetails = ({ project }) => {
 export default ProjectDetails;
 
 ProjectDetails.propTypes = {
-  project: PropTypes.object.isRequired,
+  title: PropTypes.string.isRequired,
+  technologies: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
 };

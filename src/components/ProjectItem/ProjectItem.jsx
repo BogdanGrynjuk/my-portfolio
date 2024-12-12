@@ -77,7 +77,11 @@ const ProjectItem = ({ project }) => {
       </div>
       {isOpenModal && (
         <Modal closeModal={toggleModal}>
-          <ProjectDetails project={project} />
+          <ProjectDetails
+            title={project.title}
+            img={project.img}
+            technologies={project.technologies}
+          />
         </Modal>
       )}
     </>
