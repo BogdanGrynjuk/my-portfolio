@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/my-portfolio/static/css/main.679bff64.css",
-    "main.js": "/my-portfolio/static/js/main.495f3267.js",
-    "static/media/dynamic-mask.gif": "/my-portfolio/static/media/dynamic-mask.0070be167da612d37a19.gif",
+    "main.css": "/my-portfolio/static/css/main.a1163bdd.css",
+    "main.js": "/my-portfolio/static/js/main.42edb471.js",
     "static/media/sound.mp3": "/my-portfolio/static/media/sound.34b3ac01fecea09330fd.mp3",
+    "static/media/dynamic-mask.gif": "/my-portfolio/static/media/dynamic-mask.caa382865b5322fcf26b.gif",
     "static/media/car-go.jpg": "/my-portfolio/static/media/car-go.0347d1ad918e1c707c84.jpg",
     "static/media/ShantellSans-SemiBold.ttf": "/my-portfolio/static/media/ShantellSans-SemiBold.8c615d622d17a4424839.ttf",
     "static/media/ShantellSans-Medium.ttf": "/my-portfolio/static/media/ShantellSans-Medium.3e0d0e058f4074e46ea8.ttf",
@@ -30,11 +30,11 @@
     "static/media/linkedin_icon.svg": "/my-portfolio/static/media/linkedin_icon.431ffa9115493f238ed75116e00ffcd5.svg",
     "static/media/UA.svg": "/my-portfolio/static/media/UA.4aa8bf9865be6febbd44791b3e5de05e.svg",
     "static/media/telegram_icon.svg": "/my-portfolio/static/media/telegram_icon.997814c3920f57df58af71798e580fda.svg",
-    "main.679bff64.css.map": "/my-portfolio/static/css/main.679bff64.css.map",
-    "main.495f3267.js.map": "/my-portfolio/static/js/main.495f3267.js.map"
+    "main.a1163bdd.css.map": "/my-portfolio/static/css/main.a1163bdd.css.map",
+    "main.42edb471.js.map": "/my-portfolio/static/js/main.42edb471.js.map"
   },
   "entrypoints": [
-    "static/css/main.679bff64.css",
-    "static/js/main.495f3267.js"
+    "static/css/main.a1163bdd.css",
+    "static/js/main.42edb471.js"
   ]
 }
