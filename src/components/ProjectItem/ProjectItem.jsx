@@ -8,14 +8,20 @@ import LinkUI from 'components/UI/LinkUI';
 import Modal from 'components/UI/ModalUI';
 import ProjectDetails from 'components/ProjectDetails';
 
-const ProjectItem = ({ project }) => {
+const ProjectItem = ({ project, startAutoplaySlider, stopAutoplaySlider }) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const { t, i18n } = useTranslation();
   const description =
     project.description[i18n.language] || project.description.en;
 
-  const toggleModal = () => {
-    setIsOpenModal(!isOpenModal);
+  const openModal = () => {
+    setIsOpenModal(true);
+    stopAutoplaySlider();
+  };
+
+  const closeModal = () => {
+    setIsOpenModal(false);
+    startAutoplaySlider();
   };
 
   const bannerRef = useRef();
@@ -48,7 +54,7 @@ const ProjectItem = ({ project }) => {
       <div className={css.container}>
         <h3 className={css.container__title}>{project.title}</h3>
 
-        <div className={css.banner} ref={bannerRef} onClick={toggleModal}>
+        <div className={css.banner} ref={bannerRef} onClick={openModal}>
           <img
             className={css.banner__img}
             src={project.img}
@@ -76,7 +82,7 @@ const ProjectItem = ({ project }) => {
         </div>
       </div>
       {isOpenModal && (
-        <Modal closeModal={toggleModal}>
+        <Modal closeModal={closeModal}>
           <ProjectDetails
             title={project.title}
             img={project.img}
@@ -101,6 +107,8 @@ ProjectItem.propTypes = {
     gitRepository: PropTypes.string.isRequired,
     img: PropTypes.string.isRequired,
   }).isRequired,
+  startAutoplaySlider: PropTypes.func.isRequired,
+  stopAutoplaySlider: PropTypes.func.isRequired,
 };
 
 export default ProjectItem;
