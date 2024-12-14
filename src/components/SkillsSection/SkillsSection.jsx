@@ -1,12 +1,24 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
+import ButtonUI from 'components/UI/Button/ButtonUI';
+
 import { TECH_SKILLS } from 'constants/techSkills';
 
 import css from './SkillsSection.module.scss';
 
+import arrowRight from 'assets/images/icons/arrow-right.svg';
+
 const SkillsSection = () => {
   const { t } = useTranslation();
+
+  const handleClickPrev = () => {
+    console.log('prev');
+  };
+
+  const handleClickNext = () => {
+    console.log('next');
+  };
 
   return (
     <section className={css.container}>
@@ -31,6 +43,21 @@ const SkillsSection = () => {
             </div>
           </div>
         ))}
+      </div>
+
+      <div className={css.controls}>
+        <ButtonUI
+          onClick={handleClickPrev}
+          className={`${css['controls__button']} ${css['controls__button--prev']}`}
+        >
+          <img src={arrowRight} alt="arrow previous slide" />
+        </ButtonUI>
+        <ButtonUI
+          onClick={handleClickNext}
+          className={`${css['controls__button']} ${css['controls__button--next']}`}
+        >
+          <img src={arrowRight} alt="arrow next slide" />
+        </ButtonUI>
       </div>
     </section>
   );

@@ -10,9 +10,9 @@
   & .slider {
     --rotate: 0deg;
     position: absolute;
-    top: 50%;
+    bottom: 0;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(var(--rotate));
+    transform: translate(-50%, 50%) rotate(var(--rotate));
     width: calc($index * 28);
     height: calc($index * 28);
     border-radius: 100%;
@@ -56,6 +56,36 @@
     &__icon {
       object-fit: cover;
       transition: 1s $transition-timing-function;
+    }
+  }
+
+  & .controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    width: calc(($index * 28));
+    left: 50%;
+    bottom: calc(($index * 28) / 2 - (($index * 3.2) / 2));
+    transform: translate(-50%, 0);
+
+    &__button {
+      width: calc($index * 3.2);
+      height: calc($index * 3.2);
+
+      @media (hover: hover) {
+        &:hover {
+          box-shadow: $box-shadow-none;
+        }
+      }
+
+      &--prev img {
+        transform: scale(-1) rotate(-45deg);
+      }
+
+      &--next img {
+        transform: rotate(45deg);
+      }
     }
   }
 }
