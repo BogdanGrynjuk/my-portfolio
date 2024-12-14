@@ -8,11 +8,10 @@
   z-index: -1;
 
   & .slider {
-    --rotate: 0deg;
     position: absolute;
     bottom: 0;
     left: 50%;
-    transform: translate(-50%, 50%) rotate(var(--rotate));
+    transform: translate(-50%, 50%) rotate(var(--rotationAngle));
     width: calc($index * 28);
     height: calc($index * 28);
     border-radius: 100%;

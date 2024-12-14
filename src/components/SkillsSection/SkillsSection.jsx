@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import ButtonUI from 'components/UI/Button/ButtonUI';
@@ -11,20 +11,25 @@ import arrowRight from 'assets/images/icons/arrow-right.svg';
 
 const SkillsSection = () => {
   const { t } = useTranslation();
+  const [currentRotationAngle, setCurrentRotationAngle] = useState(0);
+  const rotationStep = 360 / TECH_SKILLS.length;
 
   const handleClickPrev = () => {
-    console.log('prev');
+    setCurrentRotationAngle(currentRotationAngle - rotationStep);
   };
 
   const handleClickNext = () => {
-    console.log('next');
+    setCurrentRotationAngle(currentRotationAngle + rotationStep);
   };
 
   return (
     <section className={css.container}>
       <h2 className="visually-hidden">{t('my_tech_skills')}</h2>
 
-      <div className={css.slider}>
+      <div
+        className={css.slider}
+        style={{ '--rotationAngle': `${currentRotationAngle}deg` }}
+      >
         {TECH_SKILLS.map((item, index, arr) => (
           <div
             key={index}
