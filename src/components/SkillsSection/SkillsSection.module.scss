@@ -1,0 +1,61 @@
+@use 'scss/base/mixins' as *;
+@use 'scss/base/vars' as *;
+
+.container {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: -1;
+
+  & .slider {
+    --rotate: 0deg;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(var(--rotate));
+    width: calc($index * 28);
+    height: calc($index * 28);
+    border-radius: 100%;
+    transition: transform 0.5s $transition-timing-function;
+    outline: 2px dashed $dark-gray-color;
+    outline-offset: calc($index * (-3.5));
+  }
+
+  & .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    rotate: calc((360deg / var(--quantity-slides)) * var(--slide-index) * (-1));
+
+    &__content {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      height: calc($index * 7);
+      width: calc($index * 7);
+      padding: calc($index * 1.5);
+      border-radius: 100%;
+      overflow: hidden;
+      background-image: url(../../assets/images/bg.jpg);
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: calc(($index * 7) / 2);
+        left: 50%;
+        height: calc($index * 7.5);
+        width: calc($index * 7.5);
+        background-image: url(../../assets/images/icons/circle.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        transform: translate(-50%, -50%) rotate(15deg);
+      }
+    }
+
+    &__icon {
+      object-fit: cover;
+      transition: 1s $transition-timing-function;
+    }
+  }
+}

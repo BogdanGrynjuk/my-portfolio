@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import ButtonUI from 'components/UI/Button/ButtonUI';
 import LinkUI from 'components/UI/LinkUI';
 import ModalUI from 'components/UI/ModalUI';
+import SkillsSection from 'components/SkillsSection';
 
 const IntroSection = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -38,7 +39,7 @@ const IntroSection = () => {
       </div>
       {isOpenModal && (
         <ModalUI closeModal={toggleModal}>
-          <h2>My skills</h2>
+          <SkillsSection />
         </ModalUI>
       )}
     </section>
