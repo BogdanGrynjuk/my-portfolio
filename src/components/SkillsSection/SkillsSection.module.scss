@@ -76,6 +76,23 @@
       overflow: hidden;
       background-image: url(../../assets/images/bg.jpg);
 
+      &::after {
+        content: '';
+        position: absolute;
+        top: calc(($index * 7) / 2);
+        left: 50%;
+        height: calc($index * 6.5);
+        width: calc($index * 6.5);
+        transform: translate(-50%, -50%);
+        border-radius: 100%;
+        background-image: url(../../assets/images/bg_mask.png);
+        background-position: left;
+        background-size: 300%;
+        background-repeat: no-repeat;
+        opacity: 0.25;
+        overflow: hidden;
+      }
+
       &::before {
         content: '';
         position: absolute;

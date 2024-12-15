@@ -42,7 +42,12 @@ const Avatar = () => {
 
   return (
     <div ref={avatarRef} className={css.container}>
-      <div className={css['container__content']} onClick={toggleVisibleContent}>
+      <div
+        className={`${css['container__content']} ${
+          isVisibleContent ? css['container__content--not-visible'] : ''
+        }`}
+        onClick={toggleVisibleContent}
+      >
         <div
           className={`${css['container__content-top']} ${
             isVisibleContent ? css['container__content-top--visible'] : ''
