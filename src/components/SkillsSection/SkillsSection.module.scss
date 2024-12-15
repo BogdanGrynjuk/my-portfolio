@@ -20,6 +20,10 @@
     padding: calc($index);
     gap: calc($index);
 
+    @media screen and (max-height: 660px) {
+      bottom: calc(($index * 28 / 2 * 0.65) + $index * 3.2 / 2);
+    }
+
     &__title {
       opacity: 0;
       @include fadeInWithTranslate('down', 15%);
@@ -48,6 +52,10 @@
     transition: transform 0.5s $transition-timing-function;
     outline: 2px dashed $dark-gray-color;
     outline-offset: calc($index * (-3.5));
+
+    @media screen and (max-height: 660px) {
+      transform: translate(-50%, 65%) rotate(var(--rotationAngle));
+    }
   }
 
   & .slide {
@@ -98,6 +106,10 @@
     left: 50%;
     bottom: calc(($index * 28) / 2 - (($index * 3.2) / 2));
     transform: translate(-50%, 0);
+
+    @media screen and (max-height: 660px) {
+      bottom: calc(($index * 28) / 2 * 0.65 - (($index * 3.2) / 2));
+    }
 
     &__button {
       width: calc($index * 3.2);
