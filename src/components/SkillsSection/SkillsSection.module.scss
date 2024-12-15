@@ -7,6 +7,36 @@
   overflow: hidden;
   z-index: -1;
 
+  & .description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: calc($index * 28 / 2 + $index * 3.2 / 2);
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: calc($index);
+    gap: calc($index);
+
+    &__title {
+      opacity: 0;
+      @include fadeInWithTranslate('down', 15%);
+      animation: fadeInWithTranslate-down 0.5s $transition-timing-function
+        forwards;
+    }
+
+    &__text {
+      text-align: center;
+      font-size: calc($index * 1.2);
+      opacity: 0;
+      @include fadeInWithTranslate('down', 15%);
+      animation: fadeInWithTranslate-down 0.5s 0.3s $transition-timing-function
+        forwards;
+    }
+  }
+
   & .slider {
     position: absolute;
     bottom: 0;
@@ -53,7 +83,7 @@
     }
 
     &__icon {
-      object-fit: cover;
+      object-fit: contain;
       transition: 1s $transition-timing-function;
     }
   }
@@ -64,6 +94,7 @@
     justify-content: space-between;
     position: absolute;
     width: calc(($index * 28));
+    padding: 0 calc($index);
     left: 50%;
     bottom: calc(($index * 28) / 2 - (($index * 3.2) / 2));
     transform: translate(-50%, 0);
