@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ButtonUI from 'components/UI/Button/ButtonUI';
 import { useTranslation } from 'react-i18next';
-import emailjs from '@emailjs/browser';
+import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 
 const FeedbackForm = () => {
   const { t } = useTranslation();
@@ -40,8 +40,12 @@ const FeedbackForm = () => {
       console.log('Success:', result.text);
       setSuccess(t('message_sent_successfully'));
       setFormData({ from_name: '', from_email: '', message: '' });
-    } catch (err) {
-      console.error('Error:', err.text || err.message);
+    } catch (err) {      
+      if (err instanceof EmailJSResponseStatus) {
+        console.log('EMAILJS FAILED...', err);
+        return;
+      }
+      console.error('Error:', err);
       setError(t('something_went_wrong'));
     } finally {
       setIsSending(false);
