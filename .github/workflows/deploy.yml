@@ -37,3 +37,4 @@ jobs:
           branch: gh-pages
           folder: build
           clean: true
+          target_branch: gh-pages
