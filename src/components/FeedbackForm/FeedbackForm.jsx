@@ -16,6 +16,10 @@ const FeedbackForm = () => {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
+  const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+  const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+  const publicId = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+
   const handleInputChange = e => {
     const { name, value } = e.target;
     setFormData(prevData => ({
@@ -32,10 +36,10 @@ const FeedbackForm = () => {
 
     try {
       const result = await emailjs.send(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID,
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        serviceId,
+        templateId,
         formData,
-        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+        publicId
       );
       console.log('Success:', result.text);
       setSuccess(t('message_sent_successfully'));
