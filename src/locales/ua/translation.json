@@ -14,5 +14,13 @@
   "see_website": "Відвідати сайт",
   "see_code": "Дивитись код",
   "built_with": "Створено за допомогою",
-  "my_tech_skills": "Мої технічні навички"
+  "my_tech_skills": "Мої технічні навички",
+  "my_contacts": "Moї контакти",
+  "your_name": "Ваше ім'я",
+  "your_email": "Ваш email",
+  "your_message": "Ваше повідомлення",
+  "send": "Надіслати",
+  "sending": "Відправлення",
+  "message_sent_successfully": "Повідомлення успішно надіслано",
+  "something_went_wrong": "Щось пішло не так, повторіть спробу"
 }

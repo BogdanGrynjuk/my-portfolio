@@ -11,6 +11,7 @@ import IntroSection from 'components/IntroSection';
 import LanguageSwitcher from 'components/LanguageSwitcher';
 import ProjectsSection from 'components/ProjectsSection';
 import MusicToggleButton from 'components/MusicToggleButton';
+import ContactsSection from 'components/ContactsSection';
 
 const Slider = () => {
   const swiperRef = useRef(null);
@@ -74,7 +75,7 @@ const Slider = () => {
             <ProjectsSection />
           </SwiperSlide>
           <SwiperSlide>
-            <h2>Contacts Section</h2>
+            <ContactsSection />
           </SwiperSlide>
         </Swiper>
       </main>
