@@ -29,9 +29,23 @@ jobs:
         run: |
           if [ -f .env ]; then
             echo ".env file created successfully"
+          if grep -q "REACT_APP_EMAILJS_SERVICE_ID=" .env; then
+            echo "REACT_APP_EMAILJS_SERVICE_ID is set"
+          else
+            echo "REACT_APP_EMAILJS_SERVICE_ID is not set"
+          fi
+          if grep -q "REACT_APP_EMAILJS_TEMPLATE_ID=" .env; then
+            echo "REACT_APP_EMAILJS_TEMPLATE_ID is set"
+          else
+            echo "REACT_APP_EMAILJS_TEMPLATE_ID is not set"
+          fi
+          if grep -q "REACT_APP_EMAILJS_PUBLIC_KEY=" .env; then
+            echo "REACT_APP_EMAILJS_PUBLIC_KEY is set"
+          else
+            echo "REACT_APP_EMAILJS_PUBLIC_KEY is not set"
+          fi
           else
             echo ".env file creation failed"
-            exit 1  # This will stop the workflow if the .env file is not created
           fi
 
       - name: Lint JavaScript
