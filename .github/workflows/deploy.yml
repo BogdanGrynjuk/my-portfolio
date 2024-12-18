@@ -8,7 +8,7 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v3
 
       - name: Set up Node.js
@@ -19,23 +19,31 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Create .env file for environment variables
+        run: |
+          echo "REACT_APP_EMAILJS_SERVICE_ID=${{ secrets.REACT_APP_EMAILJS_SERVICE_ID }}" > .env
+          echo "REACT_APP_EMAILJS_TEMPLATE_ID=${{ secrets.REACT_APP_EMAILJS_TEMPLATE_ID }}" >> .env
+          echo "REACT_APP_EMAILJS_PUBLIC_KEY=${{ secrets.REACT_APP_EMAILJS_PUBLIC_KEY }}" >> .env
+
+      - name: Confirm environment variables have been set
+        run: |
+          if [ -f .env ]; then
+            echo ".env file created successfully"
+          else
+            echo ".env file creation failed"
+            exit 1  # This will stop the workflow if the .env file is not created
+          fi
+
       - name: Lint JavaScript
         run: npm run lint:js
 
       - name: Build project
         run: npm run build
-        env:
-          REACT_APP_EMAILJS_SERVICE_ID:
-            ${{ secrets.REACT_APP_EMAILJS_SERVICE_ID }}
-          REACT_APP_EMAILJS_TEMPLATE_ID:
-            ${{ secrets.REACT_APP_EMAILJS_TEMPLATE_ID }}
-          REACT_APP_EMAILJS_PUBLIC_KEY:
-            ${{ secrets.REACT_APP_EMAILJS_PUBLIC_KEY }}
 
       - name: Debug Build Folder
         run: ls -la build
 
-      - name: Deploy
+      - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
           branch: gh-pages
