@@ -20,9 +20,9 @@ const FeedbackForm = () => {
   const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
   const publicId = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
 
-  console.log('Service ID:' + serviceId + '----');
-  console.log('Template ID:' + templateId + '----');
-  console.log('Public ID:' + publicId + '----');
+  console.log('Service ID:' + serviceId + '-----');
+  console.log('Template ID:' + templateId + '-----');
+  console.log('Public ID:' + publicId + '-----');
 
   const handleInputChange = e => {
     const { name, value } = e.target;
