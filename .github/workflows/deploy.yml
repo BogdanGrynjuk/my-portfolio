@@ -8,7 +8,7 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
+      - name: Checkout
         uses: actions/checkout@v3
 
       - name: Set up Node.js
@@ -16,22 +16,29 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install, lint, build 🔧
-        run: |
-          npm install
-          npm run lint:js
-          npm run build
-          env:
-            REACT_APP_EMAILJS_SERVICE_ID=${{ secrets.REACT_APP_EMAILJS_SERVICE_ID }}
-            REACT_APP_EMAILJS_TEMPLATE_ID=${{ secrets.REACT_APP_EMAILJS_TEMPLATE_ID }}
-            REACT_APP_EMAILJS_PUBLIC_KEY=${{ secrets.REACT_APP_EMAILJS_PUBLIC_KEY }}
+      - name: Install dependencies
+        run: npm install
+
+      - name: Lint JavaScript
+        run: npm run lint:js
+
+      - name: Build project
+        run: npm run build
+        env:
+          REACT_APP_EMAILJS_SERVICE_ID:
+            ${{ secrets.REACT_APP_EMAILJS_SERVICE_ID }}
+          REACT_APP_EMAILJS_TEMPLATE_ID:
+            ${{ secrets.REACT_APP_EMAILJS_TEMPLATE_ID }}
+          REACT_APP_EMAILJS_PUBLIC_KEY:
+            ${{ secrets.REACT_APP_EMAILJS_PUBLIC_KEY }}
 
       - name: Debug Build Folder
         run: ls -la build
 
-      - name: Deploy 🚀
+      - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
           branch: gh-pages
           folder: build
           clean: true
+          target_branch: gh-pages
