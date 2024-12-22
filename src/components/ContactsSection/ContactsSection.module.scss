@@ -1,7 +1,10 @@
 @use 'scss/base/vars' as *;
 
 .section {
-  height: 100%;
+  display: grid;
+  gap: calc($index);
+  place-items: center;
+  max-height: 100%;
   padding-bottom: calc($index);
   overflow: hidden;
 }

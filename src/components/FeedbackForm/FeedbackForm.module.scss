@@ -1,0 +1,155 @@
+@use 'scss/base/vars' as *;
+@use 'scss/base/mixins' as *;
+@use 'scss/base/fonts' as *;
+
+.container {
+  display: grid;
+  gap: calc($index);
+
+  @media screen and (max-height: 660px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  @include tablet-only {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  &__field {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    aspect-ratio: 3/1;
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url(../../assets//images/icons/ellipse.svg);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    &--big {
+      aspect-ratio: 1.36/1;
+
+      &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(../../assets//images/icons/ellipse-big.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+
+    @media screen and (max-height: 660px) {
+      &:nth-child(1) {
+        grid-column: 1;
+        grid-row: 1;
+      }
+
+      &:nth-child(2) {
+        grid-column: 1;
+        grid-row: 2;
+      }
+
+      &--big {
+        grid-column: 2;
+        grid-row: 1 / 3;
+      }
+    }
+
+    @include tablet-only {
+      &:nth-child(1) {
+        grid-column: 1;
+        grid-row: 1;
+      }
+
+      &:nth-child(2) {
+        grid-column: 1;
+        grid-row: 2;
+      }
+
+      &--big {
+        grid-column: 2;
+        grid-row: 1 / 3;
+      }
+    }
+  }
+
+  &__label {
+    text-align: left;
+    display: block;
+    font-weight: 600;
+    font-size: calc($index);
+  }
+
+  &__input,
+  &__textarea {
+    flex-grow: 1;
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: calc($index);
+    font-family: monospace, sans-serif;
+    font-size: calc($index);
+    font-weight: 500;
+    line-height: 1.5;
+    color: $dark-gray-color;
+    background-color: transparent;
+    background-clip: padding-box;
+    border: none;
+    outline: none;
+    appearance: none;
+  }
+
+  &__input::placeholder,
+  &__textarea::placeholder {
+    color: $light-gray-color;
+  }
+
+  &__textarea {
+    resize: none;
+    padding: 0 calc($index);
+    padding-right: calc($index * 0.3 - $index * 0.2);
+    margin: calc($index) 0;
+    width: calc(100% - $index * 0.3 - $index * 0.5);
+
+    &::-webkit-scrollbar {
+      width: calc($index * 0.3);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $black-color;
+      border-radius: 100%;
+      cursor: pointer;
+    }
+  }
+
+  &__button {
+    width: calc(100% - ((1vw + 1vh) * 0.3));
+    @media screen and (max-height: 660px) {
+      width: 50%;
+      grid-column: 1 / -1;
+      grid-row: 3;
+      justify-self: center;
+    }
+
+    @include tablet-only {
+      width: 50%;
+      grid-column: 1 / -1;
+      grid-row: 3;
+      justify-self: center;
+    }
+  }
+}
