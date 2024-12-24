@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ButtonUI from 'components/UI/Button/ButtonUI';
+import ButtonUI from 'components/UI/ButtonUI/ButtonUI';
 import { useTranslation } from 'react-i18next';
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 

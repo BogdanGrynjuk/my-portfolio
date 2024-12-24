@@ -1,0 +1,8 @@
+@use 'scss/base/vars' as *;
+
+.social-profiles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: calc($index * 0.5);
+}

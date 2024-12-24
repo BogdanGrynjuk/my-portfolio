@@ -3,10 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import css from './Avatar.module.scss';
 
-import { SOCIAL_NETWORKS } from 'constants/socialNetworks';
-
-import SocialLinkUI from 'components/UI/SocialLink';
-
+import SocialProfilesUI from 'components/UI/SocialProfilesUI';
 const Avatar = () => {
   const [isVisibleContent, setIsVisibleContent] = useState(false);
   const avatarRef = useRef();
@@ -62,13 +59,7 @@ const Avatar = () => {
           }`}
         >
           <p>{t('online_profiles')}</p>
-          <ul className={css['container__social-list']}>
-            {SOCIAL_NETWORKS.map(({ id, name, url, icon }) => (
-              <li key={id}>
-                <SocialLinkUI name={name} url={url} icon={icon} />
-              </li>
-            ))}
-          </ul>
+          <SocialProfilesUI className={css['container__social-list']} />
         </div>
       </div>
     </div>

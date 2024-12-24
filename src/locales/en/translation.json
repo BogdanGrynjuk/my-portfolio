@@ -16,11 +16,14 @@
   "built_with": "Built With",
   "my_tech_skills": "My Technical Skills",
   "my_contacts": "My Contacts",
+  "contact_intro": "You can contact me in any way that is convenient for you. I will be happy to answer your questions or offer any assistance.",
   "your_name": "Your Name",
   "your_email": "Your Email",
   "message": "Message",
   "send": "Send",
   "sending": "Sending...",
   "message_sent_successfully": "Your message sent successfully",
-  "something_went_wrong": "Something went wrong, please try again"
+  "something_went_wrong": "Something went wrong, please try again",
+  "my_address": "Viacheslava Chornovola Ave, 16з, Lviv, Lviv Oblast, Ukraine",
+  "all_right_reserved": "All Right Reserved"
 }

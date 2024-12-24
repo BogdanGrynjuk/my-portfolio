@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import css from './IntroSection.module.scss';
 import Avatar from 'components/Avatar';
 import { useTranslation } from 'react-i18next';
-import ButtonUI from 'components/UI/Button/ButtonUI';
+import ButtonUI from 'components/UI/ButtonUI/ButtonUI';
 import LinkUI from 'components/UI/LinkUI';
 import ModalUI from 'components/UI/ModalUI';
 import SkillsSection from 'components/SkillsSection';

@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 
-import ButtonUI from '../Button/ButtonUI';
+import ButtonUI from '../ButtonUI/ButtonUI';
 
 import css from './ModalUI.module.scss';
 

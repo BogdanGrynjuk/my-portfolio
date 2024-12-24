@@ -1,0 +1,33 @@
+@use 'scss/base/vars' as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  row-gap: calc($index * 0.5);
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  column-gap: calc($index * 0.5);
+  text-align: left;
+  font-size: calc($index * 1.2);
+  font-weight: 500;
+  font-style: normal;
+  color: $black-color;
+  transition: color 0.5s $transition-timing-function;
+
+  @media (hover: hover) {
+    &:hover {
+      color: $dark-gray-color;
+    }
+  }
+}
+
+.icon {
+  flex-shrink: 0;
+  width: calc($index * 1.2);
+  height: calc($index * 1.2);
+  object-fit: cover;
+  fill: currentColor;
+}

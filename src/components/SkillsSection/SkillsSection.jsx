@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import ButtonUI from 'components/UI/Button/ButtonUI';
+import ButtonUI from 'components/UI/ButtonUI/ButtonUI';
 
 import { TECH_SKILLS } from 'constants/techSkills';
 
