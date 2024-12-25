@@ -11,7 +11,7 @@
     grid-template-rows: auto auto auto;
   }
 
-  @include tablet-only {
+  @include tablet-and-desktop {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto auto;
   }
@@ -22,6 +22,7 @@
     flex-direction: column;
     width: 100%;
     aspect-ratio: 3/1;
+
     &::before {
       content: '';
       position: absolute;
@@ -69,7 +70,7 @@
       }
     }
 
-    @include tablet-only {
+    @include tablet-and-desktop {
       &:nth-child(1) {
         grid-column: 1;
         grid-row: 1;
@@ -88,6 +89,7 @@
   }
 
   &__label {
+    padding-left: calc($index * 0.5);
     text-align: left;
     display: block;
     font-weight: 600;
@@ -101,7 +103,7 @@
     display: block;
     width: 100%;
     padding: calc($index);
-    font-family: monospace, sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
     font-size: calc($index * 1.2);
     font-weight: 500;
     line-height: 1.5;
@@ -145,7 +147,7 @@
       justify-self: center;
     }
 
-    @include tablet-only {
+    @include tablet-and-desktop {
       width: 50%;
       grid-column: 1 / -1;
       grid-row: 3;

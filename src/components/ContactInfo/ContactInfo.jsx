@@ -10,36 +10,41 @@ import css from './ContactInfo.module.scss';
 const ContactInfo = () => {
   const { t } = useTranslation();
   return (
-    <address className={css.container}>
-      <a
-        className={css.link}
-        href="https://maps.app.goo.gl/5yhva4vJy9vsLoDy8"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <LocationIcon className={css.icon} />
-        {t('my_address')}
-      </a>
+    <>
+      <div className={css.container}>
+        <h3>{t('my_contacts')}:</h3>
+        <address className={css.contacts}>
+          <a
+            className={css.link}
+            href="https://maps.app.goo.gl/5yhva4vJy9vsLoDy8"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <LocationIcon className={css.icon} />
+            {t('my_address')}
+          </a>
 
-      <a
-        className={css.link}
-        href="tel:+380964287231"
-        rel="noopener noreferrer"
-      >
-        <PhoneIcon className={css.icon} />
-        +380964287231
-      </a>
+          <a
+            className={css.link}
+            href="tel:+380964287231"
+            rel="noopener noreferrer"
+          >
+            <PhoneIcon className={css.icon} />
+            +380964287231
+          </a>
 
-      <a
-        className={css.link}
-        href="mailto:bgrynjuk@ukr.net"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <EmailIcon className={css.icon} />
-        bgrynjuk@ukr.net
-      </a>
-    </address>
+          <a
+            className={css.link}
+            href="mailto:bgrynjuk@ukr.net"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <EmailIcon className={css.icon} />
+            bgrynjuk@ukr.net
+          </a>
+        </address>
+      </div>
+    </>
   );
 };
 

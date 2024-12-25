@@ -17,14 +17,16 @@ const ContactsSection = () => {
       <p className={css['section__header']}>{t('contact_intro')}</p>
 
       <div className={css['section__main']}>
-        <FeedbackForm />
         <ContactInfo />
-        <SocialProfilesUI />
+        <FeedbackForm />
       </div>
 
-      <p className={css['section__footer']}>
-        &copy; {currenYear}. {t('all_right_reserved')}
-      </p>
+      <div className={css['section__footer']}>
+        <p>
+          &copy; {currenYear}. {t('all_right_reserved')}
+        </p>
+        <SocialProfilesUI />
+      </div>
     </section>
   );
 };

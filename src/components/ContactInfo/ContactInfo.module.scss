@@ -3,6 +3,12 @@
 .container {
   display: flex;
   flex-direction: column;
+  row-gap: calc($index);
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
   row-gap: calc($index * 0.5);
 }
 
@@ -26,8 +32,7 @@
 
 .icon {
   flex-shrink: 0;
-  width: calc($index * 1.2);
-  height: calc($index * 1.2);
-  object-fit: cover;
-  fill: currentColor;
+  width: calc($index * 2);
+  height: calc($index * 2);
+  object-fit: contain;
 }
