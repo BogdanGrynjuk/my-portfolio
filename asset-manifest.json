@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/my-portfolio/static/css/main.e54b91a7.css",
-    "main.js": "/my-portfolio/static/js/main.c18a2b18.js",
+    "main.css": "/my-portfolio/static/css/main.1e4534bd.css",
+    "main.js": "/my-portfolio/static/js/main.2b99f16c.js",
     "static/media/sound.mp3": "/my-portfolio/static/media/sound.34b3ac01fecea09330fd.mp3",
     "static/media/dynamic-mask.gif": "/my-portfolio/static/media/dynamic-mask.caa382865b5322fcf26b.gif",
     "static/media/car-go.jpg": "/my-portfolio/static/media/car-go.0347d1ad918e1c707c84.jpg",
@@ -41,12 +41,16 @@
     "static/media/linkedin_icon.svg": "/my-portfolio/static/media/linkedin_icon.431ffa9115493f238ed75116e00ffcd5.svg",
     "static/media/UA.svg": "/my-portfolio/static/media/UA.4aa8bf9865be6febbd44791b3e5de05e.svg",
     "static/media/html_icon.svg": "/my-portfolio/static/media/html_icon.aff8a9cb398fc75e4f21dab1ba1e097e.svg",
+    "static/media/success.svg": "/my-portfolio/static/media/success.9a843dc6eb8e329dec6f7c3969c80b86.svg",
+    "static/media/info.svg": "/my-portfolio/static/media/info.2cb5ed3647050ea4dc77c1be85177473.svg",
+    "static/media/error.svg": "/my-portfolio/static/media/error.ade43291883fd0a3f73f9c3510c40b7b.svg",
+    "static/media/close.svg": "/my-portfolio/static/media/close.3832e1009cc2bcd6786bebfb3d7e52f5.svg",
     "static/media/telegram_icon.svg": "/my-portfolio/static/media/telegram_icon.997814c3920f57df58af71798e580fda.svg",
-    "main.e54b91a7.css.map": "/my-portfolio/static/css/main.e54b91a7.css.map",
-    "main.c18a2b18.js.map": "/my-portfolio/static/js/main.c18a2b18.js.map"
+    "main.1e4534bd.css.map": "/my-portfolio/static/css/main.1e4534bd.css.map",
+    "main.2b99f16c.js.map": "/my-portfolio/static/js/main.2b99f16c.js.map"
   },
   "entrypoints": [
-    "static/css/main.e54b91a7.css",
-    "static/js/main.c18a2b18.js"
+    "static/css/main.1e4534bd.css",
+    "static/js/main.2b99f16c.js"
   ]
 }
