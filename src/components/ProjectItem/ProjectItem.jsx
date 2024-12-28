@@ -7,12 +7,25 @@ import css from './ProjectItem.module.scss';
 import LinkUI from 'components/UI/LinkUI';
 import Modal from 'components/UI/ModalUI';
 import ProjectDetails from 'components/ProjectDetails';
+import ButtonUI from 'components/UI/ButtonUI';
+import NotificationUI from 'components/UI/NotificationUI';
 
 const ProjectItem = ({ project, startAutoplaySlider, stopAutoplaySlider }) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
+  const [isOpenNotification, setIsOpenNotification] = useState(false);
   const { t, i18n } = useTranslation();
   const description =
     project.description[i18n.language] || project.description.en;
+
+  const openNotification = () => {
+    setIsOpenNotification(true);
+    stopAutoplaySlider();
+  };
+
+  const closeNotification = () => {
+    setIsOpenNotification(false);
+    startAutoplaySlider();
+  };
 
   const openModal = () => {
     setIsOpenModal(true);
@@ -71,14 +84,24 @@ const ProjectItem = ({ project, startAutoplaySlider, stopAutoplaySlider }) => {
           >
             {t('see_website')}
           </LinkUI>
-          <LinkUI
-            className={css.container__link}
-            href={project.gitRepository}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {t('see_code')}
-          </LinkUI>
+          {project.gitRepository ? (
+            <LinkUI
+              className={css.container__link}
+              href={project.gitRepository}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t('see_code')}
+            </LinkUI>
+          ) : (
+            <ButtonUI
+              type="button"
+              className={css.container__button}
+              onClick={openNotification}
+            >
+              {t('see_code')}
+            </ButtonUI>
+          )}
         </div>
       </div>
       {isOpenModal && (
@@ -89,6 +112,13 @@ const ProjectItem = ({ project, startAutoplaySlider, stopAutoplaySlider }) => {
             technologies={project.technologies}
           />
         </Modal>
+      )}
+      {isOpenNotification && (
+        <NotificationUI
+          type="info"
+          message={t('project_code_unavailable')}
+          onClose={closeNotification}
+        />
       )}
     </>
   );
@@ -104,7 +134,7 @@ ProjectItem.propTypes = {
     }).isRequired,
     technologies: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,
-    gitRepository: PropTypes.string.isRequired,
+    gitRepository: PropTypes.string,
     img: PropTypes.string.isRequired,
   }).isRequired,
   startAutoplaySlider: PropTypes.func.isRequired,

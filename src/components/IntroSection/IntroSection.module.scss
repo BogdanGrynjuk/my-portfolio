@@ -22,7 +22,7 @@
     display: flex;
     flex-direction: column;
     gap: calc($index);
-    width: 60%;
+    width: 70%;
 
     @include tablet-only {
       gap: calc($index * 0.5);

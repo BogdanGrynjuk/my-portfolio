@@ -24,6 +24,10 @@
   "sending": "Sending...",
   "message_sent_successfully": "Your message sent successfully",
   "something_went_wrong": "Something went wrong, please try again",
+  "project_code_unavailable": "Due to confidentiality, I cannot publicly share the code for this project",
+  "success": "Success",
+  "error": "Error",
+  "info": "Info",
   "my_address": "V. Chornovola Ave, 16з, Lviv, Lviv Oblast, Ukraine",
   "all_right_reserved": "All Right Reserved"
 }

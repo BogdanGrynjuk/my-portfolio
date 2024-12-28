@@ -106,14 +106,14 @@
 
     @include tablet-and-desktop {
       flex-direction: row;
-      width: 50%;
+      width: 60%;
     }
 
     @include desktop-only {
       width: 40%;
     }
   }
-
+  &__button,
   &__link {
     flex: 1;
   }

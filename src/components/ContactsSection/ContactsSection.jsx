@@ -6,7 +6,6 @@ import css from './ContactsSection.module.scss';
 
 import ContactInfo from 'components/ContactInfo';
 import SocialProfilesUI from 'components/UI/SocialProfilesUI';
-
 const ContactsSection = () => {
   const { t } = useTranslation();
   const currenYear = new Date().getFullYear();

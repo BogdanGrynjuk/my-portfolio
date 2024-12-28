@@ -141,14 +141,14 @@
   &__button {
     width: calc(100% - ((1vw + 1vh) * 0.3));
     @media screen and (max-height: 660px) {
-      width: 50%;
+      width: 35%;
       grid-column: 1 / -1;
       grid-row: 3;
       justify-self: center;
     }
 
     @include tablet-and-desktop {
-      width: 50%;
+      width: 35%;
       grid-column: 1 / -1;
       grid-row: 3;
       justify-self: center;

@@ -1,0 +1,144 @@
+@use 'scss/base/vars' as *;
+
+.container {
+  position: fixed;
+  inset: 0;
+  background-color: rgba($color: $black-color, $alpha: 0.8);
+  z-index: 1000;
+}
+
+.toast {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc($index * 30);
+  padding: calc($index * 0.5);
+  display: flex;
+  align-items: center;
+  column-gap: calc($index);
+  background-color: $cappuccino-color;
+  font-size: calc($index);
+  border: 1px solid $black-color;
+  border-radius: calc((1vw + 1vh) * 0.5);
+  color: $black-color;
+  animation: fadeIn 0.5s $transition-timing-function 1 forwards;
+
+  &--success {
+    background-image: linear-gradient(
+        to right,
+        rgba($color: $success-color, $alpha: 0.35),
+        transparent 50%
+      ),
+      url(../../../assets/images/bg.jpg);
+  }
+
+  &--error {
+    background-image: linear-gradient(
+        to right,
+        rgba($color: $error-color, $alpha: 0.35),
+        transparent 50%
+      ),
+      url(../../../assets/images/bg.jpg);
+  }
+
+  &--info {
+    background-image: linear-gradient(
+        to right,
+        rgba($color: $info-color, $alpha: 0.35),
+        transparent 50%
+      ),
+      url(../../../assets/images/bg.jpg);
+  }
+
+  &::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url(../../../assets/images/bg_mask.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.25;
+    z-index: -2;
+  }
+
+  &::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url(../../../assets/images/bg_mask.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: scale(-1);
+    opacity: 0.25;
+    z-index: -1;
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    width: calc($index * 2);
+    height: calc($index * 2);
+  }
+
+  &__content {
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: calc($index * 1.5);
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+
+  &__message {
+    font-size: calc($index * 1.2);
+  }
+
+  &__button-close {
+    flex-shrink: 0;
+  }
+
+  &__progress {
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    animation: timeOut 5s ease 1 forwards;
+
+    &--success {
+      background-color: $success-color;
+    }
+
+    &--error {
+      background-color: $error-color;
+    }
+
+    &--info {
+      background-color: $info-color;
+    }
+  }
+}
+
+@keyframes timeOut {
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    transform: translate(150%, -50%);
+  }
+  40% {
+    transform: translate(-55%, -50%);
+  }
+  80% {
+    transform: translate(-40%, -50%);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}

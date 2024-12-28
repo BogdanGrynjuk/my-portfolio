@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import ButtonUI from 'components/UI/ButtonUI/ButtonUI';
 import { useTranslation } from 'react-i18next';
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 
 import css from './FeedbackForm.module.scss';
 
+import ButtonUI from 'components/UI/ButtonUI/ButtonUI';
+import NotificationUI from 'components/UI/NotificationUI';
 const FeedbackForm = () => {
   const { t } = useTranslation();
 
@@ -15,8 +16,9 @@ const FeedbackForm = () => {
   });
 
   const [isSending, setIsSending] = useState(false);
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
+  const [showNotification, setShowNotification] = useState(false);
+  const [typeNotification, setTypeNotification] = useState('');
+  const [message, setMessage] = useState('');
 
   const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
   const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
@@ -33,8 +35,9 @@ const FeedbackForm = () => {
   const handleSubmit = async e => {
     e.preventDefault();
     setIsSending(true);
-    setError('');
-    setSuccess('');
+    setTypeNotification('');
+    setMessage('');
+    setShowNotification(false);
 
     try {
       const result = await emailjs.send(
@@ -44,15 +47,19 @@ const FeedbackForm = () => {
         publicId
       );
       console.log('Success:', result.text);
-      setSuccess(t('message_sent_successfully'));
+      setMessage(t('message_sent_successfully'));
+      setTypeNotification('success');
+      setShowNotification(true);
       setFormData({ from_name: '', from_email: '', message: '' });
-    } catch (err) {
-      if (err instanceof EmailJSResponseStatus) {
-        console.log('EMAILJS FAILED...', err);
+    } catch (error) {
+      if (error instanceof EmailJSResponseStatus) {
+        console.error('EMAILJS FAILED...', error);
         return;
       }
-      console.error('Error:', err);
-      setError(t('something_went_wrong'));
+      console.error('Error:', error);
+      setShowNotification(true);
+      setMessage(t('something_went_wrong'));
+      setTypeNotification('error');
     } finally {
       setIsSending(false);
     }
@@ -112,8 +119,13 @@ const FeedbackForm = () => {
         {isSending ? t('sending') : t('send')}
       </ButtonUI>
 
-      {success && <p style={{ color: 'green' }}>{success}</p>}
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+      {showNotification && (
+        <NotificationUI
+          type={typeNotification}
+          message={message}
+          onClose={() => setShowNotification(false)}
+        />
+      )}
     </form>
   );
 };
