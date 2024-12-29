@@ -8,8 +8,6 @@ showcases my skills, projects, and experience in web development.
 Check out the live version of my portfolio:
 [https://bogdangrynjuk.github.io/my-portfolio](https://bogdangrynjuk.github.io/my-portfolio)
 
----
-
 ## Features
 
 - **Project Showcase**: A gallery of my work, including descriptions,
@@ -22,8 +20,6 @@ Check out the live version of my portfolio:
 - **Modern Tech Stack**: Built with React, SCSS modules, and reusable UI
   components.
 
----
-
 ## Technologies Used
 
 - **Frontend**: React.js
@@ -31,8 +27,6 @@ Check out the live version of my portfolio:
 - **State Management**: React hooks
 - **Internationalization**: i18n
 - **Hosting**: GitHub Pages
-
----
 
 ## Getting Started
 
