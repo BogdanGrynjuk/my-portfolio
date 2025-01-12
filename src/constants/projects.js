@@ -3,6 +3,7 @@ import donut from 'assets/images/projects/donut.jpg';
 import filmoteka from 'assets/images/projects/filmoteka.jpg';
 import carGo from 'assets/images/projects/car-go.jpg';
 import reactComponentLibrary from 'assets/images/projects/react-component-library.jpg';
+import qrCodeGenerator from 'assets/images/projects/qr-code-generator.jpg';
 
 export const PROJECTS = [
   {
@@ -67,5 +68,17 @@ export const PROJECTS = [
     url: 'https://bogdangrynjuk.github.io/tutorial-react-components/',
     gitRepository: 'https://github.com/BogdanGrynjuk/tutorial-react-components',
     img: reactComponentLibrary,
+  },
+  {
+    id: 6,
+    title: 'QR Code Generator',
+    description: {
+      en: 'This project is a QR code generator application. It allows users to input data and generate QR codes with customizable colors, sizes, and borders. The generated QR code can be downloaded in various formats, such as PNG, SVG, and JPEG.',
+      ua: 'Цей проект є застосунком для генерації QR-кодів. Користувачі можуть вводити дані та генерувати QR-коди з налаштовуваними кольорами, розмірами та обводками. Згенерований QR-код можна завантажити в різних форматах, таких як PNG, SVG і JPEG.',
+    },
+    technologies: 'HTML, CSS Modules, ReactJS, TypeScript, Fetch API',
+    url: 'https://bogdangrynjuk.github.io/app-qr-code-generator/',
+    gitRepository: 'https://github.com/BogdanGrynjuk/app-qr-code-generator',
+    img: qrCodeGenerator,
   },
 ];
