@@ -4,6 +4,7 @@ import filmoteka from 'assets/images/projects/filmoteka.jpg';
 import carGo from 'assets/images/projects/car-go.jpg';
 import reactComponentLibrary from 'assets/images/projects/react-component-library.jpg';
 import qrCodeGenerator from 'assets/images/projects/qr-code-generator.jpg';
+import fitPhysique from 'assets/images/projects/fit-physique.jpg';
 
 export const PROJECTS = [
   {
@@ -80,5 +81,17 @@ export const PROJECTS = [
     url: 'https://bogdangrynjuk.github.io/app-qr-code-generator/',
     gitRepository: 'https://github.com/BogdanGrynjuk/app-qr-code-generator',
     img: qrCodeGenerator,
+  },
+  {
+    id: 7,
+    title: 'Fit Physique',
+    description: {
+      en: 'Fit Physique is a fitness web application designed to help users achieve their health goals. It offers a variety of workout routines, nutritional guidance, and progress tracking features. Users can personalize their fitness plans, monitor their achievements, and stay motivated through an intuitive interface.',
+      ua: 'Fit Physique — це вебзастосунок для фітнесу, створений, щоб допомогти користувачам досягати своїх цілей у сфері здоров’я. Він пропонує різноманітні тренувальні програми, поради щодо харчування та функції відстеження прогресу. Користувачі можуть персоналізувати свої фітнес-плани, відстежувати досягнення та залишатися мотивованими завдяки зручному інтерфейсу.',
+    },
+    technologies: 'HTML, Tailwind CSS, ReactJS, TypeScript',
+    url: 'https://webapp-fit-physique-j3m7.vercel.app/',
+    gitRepository: 'https://github.com/BogdanGrynjuk/webapp-fit-physique',
+    img: fitPhysique,
   },
 ];
