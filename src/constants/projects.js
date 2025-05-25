@@ -86,10 +86,10 @@ export const PROJECTS = [
     id: 7,
     title: 'Fit Physique',
     description: {
-      en: 'Fit Physique is a fitness web application designed to help users achieve their health goals. It offers a variety of workout routines, nutritional guidance, and progress tracking features. Users can personalize their fitness plans, monitor their achievements, and stay motivated through an intuitive interface.',
-      ua: 'Fit Physique — це вебзастосунок для фітнесу, створений, щоб допомогти користувачам досягати своїх цілей у сфері здоров’я. Він пропонує різноманітні тренувальні програми, поради щодо харчування та функції відстеження прогресу. Користувачі можуть персоналізувати свої фітнес-плани, відстежувати досягнення та залишатися мотивованими завдяки зручному інтерфейсу.',
+      en: 'A modern web application for a fitness club, showcasing services, training programs, trainers, and membership plans. Includes features like BMI calculator, testimonials, and FAQs to enhance user engagement.',
+      ua: 'Сучасний веб-застосунок для фітнес-клубу, що презентує послуги, тренувальні програми, тренерів та абонементи. Містить калькулятор ІМТ, відгуки клієнтів та відповіді на часті запитання для підвищення залученості користувачів.',
     },
-    technologies: 'HTML, Tailwind CSS, ReactJS, TypeScript',
+    technologies: 'HTML, Tailwind CSS, Next.js, TypeScript',
     url: 'https://webapp-fit-physique-j3m7.vercel.app/',
     gitRepository: 'https://github.com/BogdanGrynjuk/webapp-fit-physique',
     img: fitPhysique,
